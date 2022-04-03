@@ -1,6 +1,6 @@
 import './App.css';
 import HomePage from './pages';
-import GetImg from './components/_ImgurApi';
+import GetImg from './components/ImgurApi';
 
 function App() {
   return (
