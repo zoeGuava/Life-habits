@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+import { CLIENT_ID } from "./utils/Constants";
 
 function GetImg() {
   const [msg, setMsg] = useState('before getImg');
