@@ -1,35 +1,38 @@
 import imgurApi from '../components/api';
 import { CLIENT_ID } from '../components/utils/Constants';
 import { useState } from 'react';
-import GetImg from '../components/GetImg';
+import ImgLabel from '../components/ImgLabel';
 
 function HomePage() {
   const imgId = 'INesDmY';
   const [imgLink, setImgLink] = useState('');
 
-  function getImg(imgId) {
-    console.log('getImg is working');
-    console.log(imgId);
-    fetch(imgurApi(imgId).getImgApi(), {
+  const fetchImg = (id) => {
+    return fetch(imgurApi(id).getImgApi(), {
+      method: 'GET',
       headers: {
         authorization: `Client-ID ${CLIENT_ID}`,
-      },
+      }
     })
-      .then(response => response.text())
-      .then(result => {
-        console.log('result: ', result);
-        console.log('response: ', JSON.parse(result));
-        console.log('response.data: ', JSON.parse(result).data);
-        const link = JSON.parse(result).data.link;
-        setImgLink(link);
-      })
-      .catch(error => console.error('error', error));
+  };
+
+  async function getImg(imgId) {
+    const res = await fetchImg(imgId).catch(err => console.log(err));
+    console.log('res: ', res);
+
+    const processedRes = await res.json();
+    console.log('processedRes: ', processedRes);
+    
+    const resLink = processedRes.data.link;
+    console.log('resLink: ', resLink);
+    
+    setImgLink(resLink);
   }
 
   return (
     <>
       <h1>HomePage is working</h1>
-      <GetImg
+      <ImgLabel
         getImg={() => getImg(imgId)}
         imgLink={imgLink}
       />

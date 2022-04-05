@@ -1,4 +1,4 @@
-function GetImg({ getImg, imgLink }) {
+function ImgLabel({ getImg, imgLink }) {
   return (
     <>
       <h1>get image component is here</h1>
@@ -8,4 +8,4 @@ function GetImg({ getImg, imgLink }) {
   );
 }
 
-export default GetImg;
+export default ImgLabel;
