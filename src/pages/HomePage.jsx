@@ -7,17 +7,19 @@ function HomePage() {
   const imgId = 'INesDmY';
   const [imgLink, setImgLink] = useState('');
 
-  const fetchImg = (id) => {
-    return fetch(imgurApi(id).getImgApi(), {
-      method: 'GET',
+  const handleFetch = (method, id) => {
+    const url = imgurApi(id).getImgApi();
+    const data = {
+      method: method,
       headers: {
-        authorization: `Client-ID ${CLIENT_ID}`,
+        Authorization: `Client-ID ${CLIENT_ID}`
       }
-    })
-  };
+    };
+    return fetch(url, data);
+  }
 
   async function getImg(imgId) {
-    const res = await fetchImg(imgId).catch(err => console.log(err));
+    const res = await handleFetch('GET', imgId);
     console.log('res: ', res);
 
     const processedRes = await res.json();

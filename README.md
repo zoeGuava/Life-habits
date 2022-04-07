@@ -1,4 +1,4 @@
-# Make Exercise a Habbit
+# Life Habits
 
 ### Describe
 
