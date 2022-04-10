@@ -1,9 +1,11 @@
-# Make Exercise a Habbit
+# Life Habits
 
 ### Describe
+
 藉由對飲食與運動的紀錄來養成健身的習慣
 
 ### 飲食
+
 1. 每日三餐照片
    > imgur api
 2. 每餐的簡短紀錄
@@ -12,10 +14,12 @@
    > 圓餅圖呈現
 
 ### 運動
+
 1. 記錄每日運動量與項目
    > 運動項目分類，手臂、腰部、腹部、腿部...等
 
 ### Mermaid
+
 Use https://mermaid.live
 
 ```mermaid
