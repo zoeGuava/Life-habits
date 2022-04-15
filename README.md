@@ -1,3 +1,5 @@
+# This rep had been move to https://github.com/Rabbittee/Life-habits
+
 # Life Habits
 
 ### Describe
